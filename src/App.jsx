@@ -10,6 +10,7 @@ import {
   Sparkles,
   Sun,
 } from 'lucide-react'
+import { supabase } from './lib/supabase'
 
 const projects = [
   {
@@ -36,7 +37,7 @@ const skills = [
   'Flutter',
   'MySQL',
   'UI/UX Design',
-  'GitHub',
+  'Github',
   'REST API',
 ]
 
@@ -79,6 +80,7 @@ function ThemeToggle({ theme, setTheme }) {
 
 export default function App() {
   const [theme, setTheme] = useState(getInitialTheme)
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
     document.documentElement.classList.toggle(
@@ -89,6 +91,39 @@ export default function App() {
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    async function getMessages() {
+      const { data, error } = await supabase
+        .from('messages')
+        .select('*')
+
+      if (error) {
+        console.error(error)
+      } else {
+        setMessages(data)
+      }
+    }
+
+    getMessages()
+  }, [])
+
+  useEffect(() => {
+    async function fetchMessages() {
+      const { data, error } = await supabase
+        .from('messages')
+        .select('*')
+    
+      if (error) {
+        console.log(error)
+      } else {
+        console.log(data)
+        setMessages(data)
+      }
+    }
+  
+    fetchMessages()
+  }, [])
+
   return (
     <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
       {/* Background Glow */}
@@ -98,7 +133,7 @@ export default function App() {
       </div>
 
       {/* Header */}
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+      <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6">
         <a href="#home" className="flex items-center gap-3 font-black tracking-tight">
           <div className="grid size-10 place-items-center rounded-2xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/30">
             <Sparkles className="size-5" />
@@ -131,7 +166,7 @@ export default function App() {
       {/* Hero */}
       <section
         id="home"
-        className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-24 pt-10 lg:grid-cols-2"
+        className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 pb-24 pt-10 lg:grid-cols-2"
       >
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-200">
@@ -177,19 +212,18 @@ export default function App() {
               </div>
 
               <div className="mt-10 flex flex-col items-center text-center">
-                <img
-                  src="/profil.jpeg"
-                  alt="Profile"
-                  className="
-                    size-40 rounded-full object-cover
-                    border-4 border-white/20
-                    shadow-2xl shadow-cyan-500/20
-                    ring-4 ring-indigo-500/20
-                    transition-all duration-500
-                    hover:scale-105
-                  "
-                />
-
+              <img
+                src={`${import.meta.env.BASE_URL}profile.jpeg`}
+                alt="profile"
+                className="
+                  size-40 rounded-full object-cover
+                  border-4 border-white/20
+                  shadow-2xl shadow-cyan-500/20
+                  ring-4 ring-indigo-500/20
+                  transition-all duration-500
+                  hover:scale-105
+                "
+              />
                 <h2 className="mt-6 text-2xl font-black">
                   Fatur
                 </h2>
@@ -216,7 +250,7 @@ export default function App() {
       </section>
 
       {/* About */}
-      <section id="about" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="about" className="mx-auto w-full max-w-7xl px-6 py-20">
         <div className="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-sm dark:border-white/10 dark:bg-white/5 lg:p-14">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -252,7 +286,7 @@ export default function App() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="projects" className="mx-auto w-full max-w-7xl px-6 py-20">
         <div className="mb-12 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300">
             Projects
@@ -297,7 +331,7 @@ export default function App() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="mx-auto max-w-7xl px-6 py-20">
+      <section id="skills" className="mx-auto w-full max-w-7xl px-6 py-20">
         <div className="rounded-[2rem] bg-slate-950 p-10 text-white dark:bg-white dark:text-slate-950">
           <div className="mb-10 text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300 dark:text-indigo-600">
@@ -323,7 +357,7 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mx-auto max-w-5xl px-6 py-20">
+      <section id="contact" className="mx-auto w-fullsmax-w-5xl px-6 py-20">
         <div className="text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300">
             Contact
@@ -340,7 +374,7 @@ export default function App() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:wahyufatkhurr007@gmail.com"
               className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:-translate-y-1"
             >
               <Mail className="size-4" />
@@ -348,20 +382,52 @@ export default function App() {
             </a>
 
             <a
-              href="https://github.com"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/10"
+              href="https://github.com/WahyuFatkhurRokhman"
+              target="_blank"
+              rel="noreferrer"
             >
               <Github className="size-4" />
-              GitHub
+              Github
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/wahyu-fatkhur-rokhman-undefined-82167040a/?skipRedirect=true://linkedin.com/in/wahyufatkhur-rokhman"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/10"
             >
               <Linkedin className="size-4" />
               LinkedIn
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Supabase Messages */}
+      <section className="mx-auto w-full max-w-7xl px-6 py-20">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-10 dark:border-white/10 dark:bg-white/5">
+          <h2 className="text-3xl font-black">
+            Messages From Supabase 🚀
+          </h2>
+
+          <div className="mt-8 space-y-4">
+            {messages.map((msg) => (
+              <div
+                key={msg.id}
+                className="
+                  rounded-2xl border border-white/10
+                  bg-white/5 p-5
+                "
+              >
+                <h3 className="text-lg font-bold text-cyan-300">
+                  {msg.name}
+                </h3>
+            
+                <p className="mt-2 text-slate-300">
+                  {msg.messages}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
