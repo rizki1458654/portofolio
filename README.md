@@ -1,16 +1,84 @@
-# React + Vite
+# 🌐 Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website portfolio pribadi berbasis React + Vite yang dibuat untuk menampilkan profil, skill, project, dan kontak anggota kelompok.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+🔗 https://rizki1458654.github.io/portofolio/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 📌 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive Design
+- Modern UI/UX
+- Hero Section
+- About Section
+- Skills Section
+- Projects Section
+- Contact Section
+- Dark / Light Mode
+- Fast Performance dengan Vite
+
+---
+
+# 🛠️ Tech Stack
+
+Project ini dibuat menggunakan teknologi berikut:
+
+- React JS
+- Vite
+- JavaScript
+- CSS3
+- Supabase
+- Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```bash
+portofolio/
+│── public/
+│── src/
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   │
+│   ├── components/
+│   │   ├── Profile/
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   └── ThemeToggle.jsx
+│   │
+│   ├── data/
+│   │   ├── biodata.js
+│   │   ├── index.js
+│   │   └── skills.js
+│   │
+│   ├── lib/
+│   │   ├── github.js
+│   │   └── supabase.js
+│   │
+│   ├── sections/
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Projects.jsx
+│   │   └── Skills.jsx
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
