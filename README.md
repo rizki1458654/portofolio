@@ -16,26 +16,26 @@ Website portfolio kelompok berbasis **React + Vite** yang dibuat untuk menampilk
   <tr>
     <td align="center">
       <a href="https://github.com/rizki1458654">
-        <img src="https://github.com/rizki1458654.png" width="100px;" alt="TimyKakeru"/><br>
-        <sub><b>TimyKakeru</b></sub>
+        <img src="https://github.com/rizki1458654.png" width="100px;" alt="Rizki"/><br>
+        <sub><b>Rizki</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/ghefan">
-        <img src="https://github.com/ghefan.png" width="100px;" alt="TriAnisharR"/><br>
-        <sub><b>TriAnisharR</b></sub>
+        <img src="https://github.com/ghefan.png" width="100px;" alt="Ghefan"/><br>
+        <sub><b>Ghefan</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/rachmantok28">
-        <img src="https://github.com/rachmantok28.png" width="100px;" alt="TimyKakeru"/><br>
-        <sub><b>TimyKakeru</b></sub>
+        <img src="https://github.com/rachmantok28.png" width="100px;" alt="Rachman"/><br>
+        <sub><b>Rachman</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/RISKIPRADITYA">
-        <img src="https://github.com/RISKIPRADITYA.png" width="100px;" alt="TriAnisharR"/><br>
-        <sub><b>TriAnisharR</b></sub>
+        <img src="https://github.com/RISKIPRADITYA.png" width="100px;" alt="Riski"/><br>
+        <sub><b>Riski</b></sub>
       </a>
     </td>
   </tr>
