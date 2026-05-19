@@ -17,7 +17,7 @@ export default function Profile({ member }) {
         <div className="relative">
           <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-xl"></div>
           <img
-            src={`/${member.img}`}
+            src={member.img}
             alt={member.name}
             className="relative size-36 rounded-full border-4 border-[#1a1d2e] object-cover shadow-2xl"
             onError={(e) => e.target.src = `https://ui-avatars.com/api/?name=${member.name}&background=random`}

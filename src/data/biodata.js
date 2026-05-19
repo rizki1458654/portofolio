@@ -1,5 +1,3 @@
-// src/data/members/biodata.js
-
 export const biodata = [
   {
     id: 1,
@@ -7,7 +5,7 @@ export const biodata = [
     role: 'Frontend Engineer • CyberSecurity',
     exp: '2+ Years Learning & Building',
     speciality: 'Responsive Apps',
-    img: 'profile1.jpeg',
+    img: '/images/profile1.jpg',
     email: 'rachmantok4@gmail.com',
     github: 'https://github.com/rachmantok28',
     instagram: 'https://www.instagram.com/rac_hman208',
@@ -21,7 +19,7 @@ export const biodata = [
     role: 'Backend Developer',
     exp: '2+ Years Experience',
     speciality: 'API & Databases',
-    img: 'profile2.jpeg',
+    img: '/images/profile2.jpg',
     email: 'ghefanaretha164@gmail.com',
     github: 'https://github.com/ghefan',
     instagram: 'https://www.instagram.com/ghfnn11',
@@ -35,7 +33,7 @@ export const biodata = [
     role: 'UI/UX Designer',
     exp: '2+ Years Experience',
     speciality: 'Prototyping & Wireframing',
-    img: 'profile3.jpeg',
+    img: '/images/profile3.jpg',
     email: 'ghefanfan164@gmail.com',
     github: 'https://github.com/rizki1458654',
     instagram: 'https://www.instagram.com/user476520e',
@@ -49,11 +47,11 @@ export const biodata = [
     role: 'Mobile Developer',
     exp: '2+ Years Experience',
     speciality: 'Flutter & React Native',
-    img: 'profile4.jpeg',
+    img: '/images/profile4.jpg',
     email: 'riskipradityamaulidan23@gmail.com',
     github: 'https://github.com/RISKIPRADITYA',
     instagram: 'https://www.instagram.com/rkyyprdty',
     aboutDesc:
       'Saya Riski P, Mobile Developer yang antusias mengembangkan aplikasi mobile performa tinggi.',
   },
-];
+]
